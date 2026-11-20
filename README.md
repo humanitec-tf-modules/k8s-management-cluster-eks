@@ -23,9 +23,9 @@ The identity setup for the Operator is an outcome of the secret store configurat
 
 The module implements the [least privilege](https://developer.humanitec.com/platform-orchestrator/docs/integration-and-extensions/containerization/kubernetes/#eks) access setup for the IAM role or IAM user used in an [AWS Cloud Account](https://developer.humanitec.com/platform-orchestrator/docs/platform-orchestrator/security/cloud-accounts/aws/). It creates:
 
-- An IAM policy granting the EKS actions `eks:AccessKubernetesApi`, `eks:DescribeCluster`, and `eks:ListNodegroups` on the cluster, and attaches it to the Cloud Account principal. The policy in the documentation also lists `eks:ListClusters` and `eks:DescribeNodegroup`, which the module omits because they have no effect when scoped to the cluster ARN
-- An [EKS access entry](https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html) of type `STANDARD` mapping the Cloud Account principal to the Kubernetes group `humanitec-platform-orchestrator`. No access policy is associated with the access entry, as none of the predefined access policies meet the requirements
-- A `ClusterRole` with the permissions required by the Platform Orchestrator and a `ClusterRoleBinding` to that Kubernetes group, via the generic base module
+- An IAM policy granting the required EKS actions on the cluster, and attaches it to the Cloud Account principal
+- An [EKS access entry](https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html) of type `STANDARD` mapping the Cloud Account principal to a Kubernetes group
+- A `ClusterRole` with the permissions required by the Platform Orchestrator and a `ClusterRoleBinding` to that Kubernetes group
 
 Prerequisites:
 
