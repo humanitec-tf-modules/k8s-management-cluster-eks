@@ -236,7 +236,7 @@ module "my_management_cluster_eks" {
 ## Requirements
 
 | Name | Version |
-| ---- | ------- |
+|------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.11.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.34.0, < 7.0.0 |
 | <a name="requirement_helm"></a> [helm](#requirement\_helm) | ~> 3.0 |
@@ -247,13 +247,13 @@ module "my_management_cluster_eks" {
 ## Modules
 
 | Name | Source | Version |
-| ---- | ------ | ------- |
+|------|--------|---------|
 | <a name="module_management_cluster"></a> [management\_cluster](#module\_management\_cluster) | github.com/humanitec-tf-modules/k8s-management-cluster | add-operator-k8s |
 
 ## Resources
 
 | Name | Type |
-| ---- | ---- |
+|------|------|
 | [aws_eks_access_entry.orchestrator](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eks_access_entry) | resource |
 | [aws_iam_policy.orchestrator_cluster_access](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
 | [aws_iam_role_policy_attachment.orchestrator_cluster_access](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
@@ -266,7 +266,7 @@ module "my_management_cluster_eks" {
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-| ---- | ----------- | ---- | ------- | :------: |
+|------|-------------|------|---------|:--------:|
 | <a name="input_access_entry_kubernetes_group"></a> [access\_entry\_kubernetes\_group](#input\_access\_entry\_kubernetes\_group) | Name of the Kubernetes group the EKS access entry maps the Cloud Account principal to. The module binds the ClusterRole `cluster_role_name` to this group. | `string` | `"humanitec-platform-orchestrator"` | no |
 | <a name="input_access_entry_tags"></a> [access\_entry\_tags](#input\_access\_entry\_tags) | Tags to assign to the EKS access entry. | `map(string)` | `null` | no |
 | <a name="input_cloud_account_id"></a> [cloud\_account\_id](#input\_cloud\_account\_id) | ID of the AWS Cloud Account the Orchestrator uses to access the cluster. | `string` | n/a | yes |
@@ -337,7 +337,7 @@ module "my_management_cluster_eks" {
 ## Outputs
 
 | Name | Description |
-| ---- | ----------- |
+|------|-------------|
 | <a name="output_access_entry_arn"></a> [access\_entry\_arn](#output\_access\_entry\_arn) | ARN of the EKS access entry mapping the Cloud Account principal to the Kubernetes group `access_entry_kubernetes_group`. |
 | <a name="output_cluster_access_subject"></a> [cluster\_access\_subject](#output\_cluster\_access\_subject) | Subject of the Kubernetes ClusterRoleBinding, i.e. the identity the Orchestrator uses to access the cluster, as an object with the attributes `kind` and `name` |
 | <a name="output_cluster_role_binding_name"></a> [cluster\_role\_binding\_name](#output\_cluster\_role\_binding\_name) | Name of the Kubernetes ClusterRoleBinding granting the Orchestrator access to the cluster |
