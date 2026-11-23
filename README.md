@@ -68,7 +68,26 @@ module "my_management_cluster_eks" {
 }
 ```
 
-The following examples configure the Operator installation. They omit the cluster inputs shown in the preceding example.
+When you manage the Cloud Account using the [AWS Cloud Account module](https://github.com/humanitec-tf-modules/orchestrator-cloud-account-aws-identity), pass in its outputs:
+
+```hcl
+module "my_management_cluster_eks" {
+  source = "github.com/humanitec-tf-modules/k8s-management-cluster-eks?ref=vX.Y.Z"
+  providers = {
+    humanitec  = humanitec
+    helm       = helm
+    kubernetes = kubernetes
+    aws        = aws
+  }
+
+  # All other values like in the preceding example, omitted
+
+  cloud_account_id            = module.cloud_account_aws_identity.cloud_account_id
+  cloud_account_principal_arn = module.cloud_account_aws_identity.iam_role_arn
+}
+```
+
+The following examples configure the Operator installation. They omit the cluster inputs shown in the first example.
 
 ### Set the load balancer of the cluster
 
