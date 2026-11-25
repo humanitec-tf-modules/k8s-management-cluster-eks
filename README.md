@@ -257,7 +257,7 @@ module "my_management_cluster_eks" {
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.11.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.34.0, < 7.0.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.33.0, < 7.0.0 |
 | <a name="requirement_helm"></a> [helm](#requirement\_helm) | ~> 3.0 |
 | <a name="requirement_humanitec"></a> [humanitec](#requirement\_humanitec) | ~> 1.9 |
 | <a name="requirement_kubernetes"></a> [kubernetes](#requirement\_kubernetes) | ~> 3 |
