@@ -267,7 +267,7 @@ module "my_management_cluster_eks" {
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_management_cluster"></a> [management\_cluster](#module\_management\_cluster) | github.com/humanitec-tf-modules/k8s-management-cluster | add-operator-k8s |
+| <a name="module_management_cluster"></a> [management\_cluster](#module\_management\_cluster) | github.com/humanitec-tf-modules/k8s-management-cluster | v1.0.0 |
 
 ## Resources
 
