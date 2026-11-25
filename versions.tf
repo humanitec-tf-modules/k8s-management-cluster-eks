@@ -14,7 +14,7 @@ terraform {
     # EKS access entries require >= 5.33.0
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 5.34.0, < 7.0.0"
+      version = ">= 5.33.0, < 7.0.0"
     }
     random = {
       source  = "hashicorp/random"
