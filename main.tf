@@ -134,8 +134,7 @@ resource "aws_eks_access_entry" "orchestrator" {
 }
 
 module "management_cluster" {
-  # TODO: use release once available
-  source = "github.com/humanitec-tf-modules/k8s-management-cluster?ref=add-operator-k8s"
+  source = "github.com/humanitec-tf-modules/k8s-management-cluster?ref=v1.0.0"
 
   driver_type                 = "humanitec/k8s-cluster-eks"
   cluster_access_subject_kind = "Group"
